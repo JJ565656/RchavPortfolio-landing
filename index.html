@@ -31,26 +31,26 @@
         h3{
           font-family: "DM Sans", sans-serif; 
           font-size: 4.25em;
-          color: #3E3A39
+          color: #3E3A39;
         }
         
          h4{
           font-family: "Bitter", serif; 
           font-size: 2.625em;
           font-style: italic;
-          color: #3E3A39
+          color: #3E3A39;
         }
         
         h5{
           font-family: "DM Sans", sans-serif; 
           font-size: 2.625em;
-          color: #3E3A39
+          color: #3E3A39;
         }
         
         h6{
           font-family: "DM Sans", sans-serif; 
           font-size: 1.625em;
-          color: #3E3A39
+          color: #3E3A39;
         }
         
          h7{
@@ -63,16 +63,33 @@
         p{
            font-family: "DM Sans", sans-serif; 
           font-size: 1em;
-          color: #3E3A39
+          color: #3E3A39;
         }
         
   /**menu bar**/
         .menu-bar{
-          padding-top: 25px; 
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px 50px;
         }
-        img{
-          height: 100px;
-          padding-left: 20px;
+        
+        .menu-bar img{
+          height: 75px;
+        }
+        
+        .nav-links {
+        display: flex;
+        gap: 30px;
+        }
+        
+        .nav-links a{
+          text-decoration: none;
+          color: #3E3A39;
+        }
+        
+        .nav-links a:hover {
+          color: #6A7E92;
         }
       </style>
 
@@ -82,9 +99,14 @@
     <!--Menu Bar-->
       <div class="menu-bar">
         <img src="RChav Logo New.png" alt="RChav full logomark in old ink">
-    
+        <div class="nav-links">
+        <h5><a href="#about">About</a></h5>
+        <h5><a href="#projects">Projects</a></h5>
+        <h5><a href="#contact">Contact</a></h5>
+    </div>
+        
+  </div>
       
-      </div>
       
     </body>
   
