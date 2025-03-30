@@ -122,7 +122,7 @@
           font-family: "Bitter", serif; 
           font-size: 1.625em;
           font-style: italic;
-          color: #3E3A39;
+          color: #6A7E92;
           margin: 0 0 5px 0;
           padding: 0;
         }
@@ -132,25 +132,106 @@
           font-weight: 300;
         }
         
-  /**typing animation**/
-        .typing{
-          width: 100%;
+    /**typing animation**/
+        .typing {
+          width: fit-content;
           white-space: nowrap;
           overflow: hidden;
-          animation: typing 2s steps(15), cursor .4s step-end infinite alternate;
+          border-right: 2px solid #3E3A39;
+          animation: typing 4s steps(18, end) infinite, cursor 0.5s step-end infinite alternate;
+          }
+
+        @keyframes typing {
+         0% {
+          width: 0;
+          }
+         80% {
+        width: 100%;
         }
+         81% {
+        width: 0;
+        }
+        100% {
+        width: 0;
+        }
+      }
+
+      @keyframes cursor {
+      0%, 100% {
+      border-color: #3E3A39;
+      }
+      50% {
+      border-color: transparent;
+      }
+      }
         
-        @keyframes typing{
-          from{
-            width: 0;
-          }
-        }
-      
-        @keyframes cursor{
-          50%{ 
-            border-color: transparent
-          }
-        }
+    /**gallery**/
+        
+      /* Section container */
+.rchive-section {
+  background-color: #DFB899;
+  margin-top: 70px;
+  padding-top: 10px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+
+.rchive-heading {
+  font-family: "DM Sans", sans-serif;
+  font-size: 2em;
+  font-weight: 600;
+  color: #F5F1EA;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+}
+
+/* Card layout */
+.rchive-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.rchive-card {
+  position: relative;
+  background-color: #F5F1EA;
+  border-radius: 10px;
+  width: 280px;
+  height: 400px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.rchive-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-content {
+  text-align: center;
+  padding: 20px;
+}
+
+.card-title,
+.card-desc {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  color: #3E3A39;
+  font-family: "DM Sans", sans-serif;
+}
+
+.rchive-card:hover .card-title,
+.rchive-card:hover .card-desc {
+  opacity: 1;
+  transform: translateY(0);
+}
         
       </style>
 
@@ -181,11 +262,40 @@
   <h6 class="aka">aka</h6>
   <h1>R.Chav</h1>
   <p class="roles">Marketing Designer | Illustrator | Student</p>
-  <h6>Making good design look effortless<br>(spoiler: it’s not)</h6>
-          
-          
+  <h6>Making good design look effortless<br>(spoiler: it’s not)</h6>         
         </div>
       </div>
+      
+      <!--Featured works-->
+      
+<section class="rchive-section">
+  <h5 class="rchive-heading">Recent Rchive(s)</h5>
+  
+  <div class="rchive-cards">
+   <div class="rchive-card">
+  <div class="card-content">
+    <h6 class="card-title">Project Title</h6>
+    <p class="card-desc">This is a short description of the project.</p>
+  </div>
+</div>
+    
+   <div class="rchive-card">
+  <div class="card-content">
+    <h6 class="card-title">Project Title2</h6>
+    <p class="card-desc">This is a short description of the project.</p>
+  </div>
+</div>
+    
+   <div class="rchive-card">
+  <div class="card-content">
+    <h6 class="card-title">Project Title3</h6>
+    <p class="card-desc">This is a short description of the project.</p>
+  </div>
+</div>
+    
+  </div>
+</section>
+      
       
       
     </body>
