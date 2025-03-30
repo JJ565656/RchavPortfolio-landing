@@ -186,10 +186,13 @@
 }
 
 /* Card layout */
+        
 .rchive-cards {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   gap: 30px;
+  flex-wrap: wrap; /* optional: helps with smaller screens */
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 20px;
@@ -197,15 +200,11 @@
 
 .rchive-card {
   position: relative;
-  background-color: #F5F1EA;
-  border-radius: 10px;
   width: 280px;
   height: 400px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
 }
 
@@ -213,25 +212,52 @@
   transform: translateY(-5px);
 }
 
-.card-content {
-  text-align: center;
-  padding: 20px;
+/* Image fills the card */
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.card-title,
-.card-desc {
+/* Overlay that fades in */
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(245, 241, 234, 0.95); /* subtle background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   opacity: 0;
   transform: translateY(10px);
   transition: opacity 0.3s ease, transform 0.3s ease;
-  color: #3E3A39;
-  font-family: "DM Sans", sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
 }
 
-.rchive-card:hover .card-title,
-.rchive-card:hover .card-desc {
+.rchive-card:hover .card-overlay {
   opacity: 1;
   transform: translateY(0);
 }
+
+.card-title {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.2em;
+  color: #3E3A39;
+  margin-bottom: 10px;
+}
+
+.card-desc {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9em;
+  color: #3E3A39;
+}
+
         
       </style>
 
@@ -272,28 +298,33 @@
   <h5 class="rchive-heading">Recent Rchive(s)</h5>
   
   <div class="rchive-cards">
-   <div class="rchive-card">
-  <div class="card-content">
-    <h6 class="card-title">Project Title</h6>
-    <p class="card-desc">This is a short description of the project.</p>
+ 
+    <div class="rchive-card">
+    <img src="GYMCOVER.png" alt="cinematic gym video subpage cover" class="card-image">
+    <div class="card-overlay">
+      <h6 class="card-title">PR or ER</h6>
+      <p class="card-desc">This is a short description of the project.</p>
+    </div>
   </div>
-</div>
+
+  <div class="rchive-card">
+    <img src="your-image.jpg" alt="Project thumbnail" class="card-image">
+    <div class="card-overlay">
+      <h6 class="card-title">Project Title</h6>
+      <p class="card-desc">This is a short description of the project.</p>
+    </div>
+  </div>
     
    <div class="rchive-card">
-  <div class="card-content">
-    <h6 class="card-title">Project Title2</h6>
-    <p class="card-desc">This is a short description of the project.</p>
+    <img src="your-image.jpg" alt="Project thumbnail" class="card-image">
+    <div class="card-overlay">
+      <h6 class="card-title">Project Title</h6>
+      <p class="card-desc">This is a short description of the project.</p>
+    </div>
   </div>
-</div>
-    
-   <div class="rchive-card">
-  <div class="card-content">
-    <h6 class="card-title">Project Title3</h6>
-    <p class="card-desc">This is a short description of the project.</p>
-  </div>
-</div>
     
   </div>
+    
 </section>
       
       
